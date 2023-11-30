@@ -1,11 +1,12 @@
 {
   "name": "@anatoliacms/anatolia-common",
-  "version": "1.1.16",
+  "version": "1.1.17",
   "description": "An abstraction layer to create core controllers for Anatolia CMS",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "prepublish": "rm -rf dist && tsc && npm publish"
+    "prepublish": "rm -rf dist && tsc && npm publish",
+    "build": "rm -rf dist && tsc -p ."
   },
   "repository": {
     "type": "git",
