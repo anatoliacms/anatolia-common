@@ -1,6 +1,6 @@
 {
   "name": "@anatoliacms/anatolia-common",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "version-name": "sumerian",
   "description": "An abstraction layer to create core controllers for Anatolia CMS",
   "main": "dist/index.js",
