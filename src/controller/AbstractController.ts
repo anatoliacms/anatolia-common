@@ -1,4 +1,5 @@
-import {Body, Delete, Get, Param, Patch, Post} from '@nestjs/common';
+import { Body, Delete, Get, Param, Patch, Post, Query } from '@nestjs/common';
+import { Filter } from 'src/payload/Filter';
 import AbstractEntity from "../model/AbstractEntity";
 import AbstractDTO from "../payload/AbstractDTO";
 import AbstractCrudService from "../service/AbstractCrudService";
@@ -15,13 +16,18 @@ export default abstract class AbstractController<
     }
 
     @Get()
-    findAll() {
-        return this.getService().findAll();
+    findAll(@Query() query:string) {
+        return this.getService().findAll(query);
     }
 
     @Get(':id')
     findOne(@Param('id') id: string) {
         return this.getService().findOne(+id);
+    }
+
+    @Post('filter')
+    filter(@Body() filter: Filter) {
+        return this.getService().filter(filter);
     }
 
     @Patch(':id')
